@@ -13,7 +13,6 @@ function Homepage() {
     const [valorDoFiltro, setValorDoFiltro] = React.useState("")
     return (
         <>
-            <CSSReset />
 
             <div style={{
                 display: "flex",
@@ -40,7 +39,8 @@ export default Homepage
 //     )
 // }
 const StyledHeader = styled.div`
-            img{
+    background-color: ${({ theme }) => theme.backgroundLevel1};
+    img{
                 width:80px;
             height:80px;
             border-radius: 50%;
@@ -96,7 +96,7 @@ function Timeline({ searchValue, ...props }) {
                                 return titleNormalized.includes(searchValueNormalized)
                             }).map((video) => {
                                 return (
-                                    <a key={videeo.url} href={video.url}>
+                                    <a key={video.url} href={video.url}>
                                         <img src={video.thumb} />
                                         <span>
                                             {video.title}
